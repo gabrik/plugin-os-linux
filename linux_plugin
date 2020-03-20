@@ -397,7 +397,7 @@ class Linux(OSPlugin):
     def remove_dir(self, dir_path):
         self.logger.info('remove_dir()', 'Removing {}'.format(dir_path))
         try:
-            if not self.__dir_exists(dir_path):
+            if self.__dir_exists(dir_path):
                 res = {'result': shutil.rmtree(dir_path)}
             else:
                 res = {'result': False}
